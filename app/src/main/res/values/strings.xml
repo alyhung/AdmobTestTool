@@ -1,0 +1,16 @@
+<resources>
+	<string name="app_name">Admob Internal Test</string>
+	<string name="hello_world">Hello world!</string>
+	<string name="action_settings">Settings</string>
+	<string name="impossible_game">Impossible Game</string>
+	<!--Replace with your own ad unit id. -->
+	<string name="ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+	<string name="retry_button_text">Retry</string>
+	<string name="watch_video_button_text">Watch Video for 10 additional coins</string>
+	<string name="default_coin_text">Coins: 0</string>
+	<string name="default_mediation_status">Input Application ID as: "ca-app-pub-xxx~xxx"\nthen press the button</string>
+	<string name="intent_ad_format_param">INTENT_AD_FORMAT</string>
+	<string name="banner_format">BANNER AD</string>
+	<string name="interstitial_format">INTERSTITIAL AD</string>
+	<string name="rewarded_format">REWARDED FORMAT</string>
+</resources>
