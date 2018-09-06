@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.formats.UnifiedNativeAdView;
 import com.hungaly.admob.internal.test.R;
 import com.hungaly.admob.internal.test.adController.*;
 
-public class AdUnitActivity extends AppCompatActivity implements AdCustomListener, BannerController.BannerActivity {
+public class AdUnitActivity extends AppCompatActivity implements AdCustomListener, BannerController.BannerActivity,
+		NativeAdvancedController.NativeAdvancedActivity{
 	AdController adController;
 	EditText text_adUnit;
 	Button btn_load;
@@ -19,7 +21,7 @@ public class AdUnitActivity extends AppCompatActivity implements AdCustomListene
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ad_unit);
 
-		TextView textStatus = findViewById(R.id.text_mStatus);
+		TextView textStatus = findViewById(R.id.text_adUnitStatus);
 		TextView textFormat = findViewById(R.id.text_adFormat);
 		text_adUnit = findViewById(R.id.input_adUnit);
 
@@ -40,6 +42,9 @@ public class AdUnitActivity extends AppCompatActivity implements AdCustomListene
 			case AdController.REWARDED:
 				adController = new RewardedController(this, textStatus, textFormat);
 				break;
+			case AdController.NATIVE:
+				adController = new NativeAdvancedController(this, textStatus, textFormat);
+			break;
 		}
 		adController.setAdListener(this);
 	}
@@ -94,11 +99,22 @@ public class AdUnitActivity extends AppCompatActivity implements AdCustomListene
 	}
 
 	@Override
-	public void addBannerView(AdView adview) {
+	public void addBannerView(AdView adView) {
 		RelativeLayout bannerHolder = findViewById(R.id.banner_holder);
+		bannerHolder.removeAllViews();
 		RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
 				RelativeLayout.LayoutParams.MATCH_PARENT);
 		layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM);
-		bannerHolder.addView(adview);
+		bannerHolder.addView(adView);
+	}
+
+	@Override
+	public void addNativeAd(UnifiedNativeAdView adView) {
+		RelativeLayout nativeHolder = findViewById(R.id.native_holder);
+		nativeHolder.removeAllViews();
+		RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
+				RelativeLayout.LayoutParams.MATCH_PARENT);
+		layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM);
+		nativeHolder.addView(adView);
 	}
 }

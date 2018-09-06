@@ -45,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
 				openTestAdUnitActivity(AdController.REWARDED);
 			}
 		});
+
+		Button btnNative = findViewById(R.id.btn_native);
+		btnNative.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				openTestAdUnitActivity(AdController.NATIVE);
+			}
+		});
 	}
 
 	private void openTestAdUnitActivity(int adFormat) {

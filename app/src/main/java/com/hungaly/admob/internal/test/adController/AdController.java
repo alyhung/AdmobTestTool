@@ -11,6 +11,7 @@ public abstract class AdController {
 	public static final int BANNER = 0;
 	public static final int INTERSTITIAL = 1;
 	public static final int REWARDED = 2;
+	public static final int NATIVE = 3;
 
 	protected TextView textStatus;
 	protected TextView adFormat;
@@ -30,6 +31,7 @@ public abstract class AdController {
 	protected void onAdClose() {
 	}
 	protected void onAdFailedToLoad(int i) {
+		textStatus.setText("Ad failed to load ERROR_CODE = " + i);
 		adListener.onAdFailedToLoad();
 	}
 	protected void onAdLeftApplication() {}
@@ -46,8 +48,4 @@ public abstract class AdController {
 
 	public abstract void loadAd(String adId);
 	public abstract void showAd();
-
-	private void updateStatus(String status){
-		textStatus.setText(status);
-	}
 }

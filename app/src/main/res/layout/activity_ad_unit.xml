@@ -11,16 +11,17 @@
 			android:text="Show"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/btn_showAdUnit" android:layout_marginTop="36dp"
+			android:id="@+id/btn_showAdUnit" android:layout_marginTop="24dp"
 			app:layout_constraintTop_toBottomOf="@+id/input_adUnit"
 			app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="80dp"
-	/>
+			android:layout_marginLeft="80dp"/>
 	<Button
 			android:text="Load"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="36dp" app:layout_constraintTop_toBottomOf="@+id/input_adUnit"
-			app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="80dp" android:id="@+id/btn_loadAdUnit"/>
+			android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/input_adUnit"
+			app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="76dp" android:id="@+id/btn_loadAdUnit"
+			android:layout_marginRight="76dp"/>
 	<TextView
 			android:text="Ad format"
 			android:layout_width="wrap_content"
@@ -29,7 +30,7 @@
 			app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="20dp" android:textSize="24sp"/>
 	<EditText
 			android:layout_width="322dp"
-			android:layout_height="45dp"
+			android:layout_height="54dp"
 			android:inputType="textPersonName"
 			android:ems="10"
 			android:id="@+id/input_adUnit" app:layout_constraintStart_toStartOf="parent"
@@ -40,14 +41,24 @@
 			android:text="TextView"
 			android:layout_width="275dp"
 			android:layout_height="42dp"
-			android:id="@+id/text_adUnitStatus" android:layout_marginTop="44dp"
+			android:id="@+id/text_adUnitStatus" android:layout_marginTop="24dp"
 			app:layout_constraintTop_toBottomOf="@+id/btn_showAdUnit" app:layout_constraintStart_toStartOf="parent"
-			android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+			android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+			app:layout_constraintHorizontal_bias="0.505"/>
 	<RelativeLayout
 			android:orientation="vertical"
 			android:layout_width="match_parent"
 			android:id="@+id/banner_holder"
 			android:layout_height="100dp"
+			app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent">
+	</RelativeLayout>
+
+	<RelativeLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:id="@+id/native_holder"
+			android:layout_height="wrap_content"
 			app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintEnd_toEndOf="parent">
 	</RelativeLayout>
